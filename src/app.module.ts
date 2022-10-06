@@ -3,10 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from './product/product.module';
+import { ConfigModule } from '@nestjs/config';
+
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://mrosario:HrBqCIMMWDG2tndd@cluster0.fjhmljs.mongodb.net/?retryWrites=true&w=majority', {
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.DATABASE_USER, {
       useNewUrlParser: true,
        useFindAndModify: false,
        useUnifiedTopology: true
