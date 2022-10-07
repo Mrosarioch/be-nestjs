@@ -34,6 +34,7 @@ export class ProductController {
   @Get('/')
   async getProducts(@Res() res) {
     const products = await this.productService.getProducts();
+    // sumar todo y contar la cantidad
     let count= products.length
     let total = products.reduce(
       (accum: number, product: any) => accum + product.amount,
