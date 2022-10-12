@@ -8,7 +8,11 @@ export const ProductSchema = new Schema({
     poliza: String,
     descripcion:String,
     autoriza: String,
-    amount:Number,
+    amount: {
+        type: Number,
+        default: 500,
+        required: true
+    },
     createdAt: { type: Date, default: Date.now }
 });
 

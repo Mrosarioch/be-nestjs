@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ProductModule } from './product/product.module';
+import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config';
 
 
@@ -14,7 +15,8 @@ import { ConfigModule } from '@nestjs/config';
        useFindAndModify: false,
        useUnifiedTopology: true
     }),
-    ProductModule
+    ProductModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
